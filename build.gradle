@@ -1,0 +1,75 @@
+//plugins {
+//    id 'org.springframework.boot' version '2.2.5.RELEASE'
+//    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+//    id 'java'
+//}
+//
+//group = 'com.booking.management'
+//version = '0.0.1-SNAPSHOT'
+//sourceCompatibility = '1.8'
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//    implementation 'org.springframework.boot:spring-boot-starter-web'
+//    testCompile('org.springframework.boot:spring-boot-starter-test')
+//    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+//    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+//}
+
+
+//buildscript {
+//    ext {
+//      springBootVersion = '2.6.4'
+//    }
+//    repositories {
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//    }
+//}
+//plugins {
+//    id 'org.springframework.boot' version '2.6.4'
+//}
+plugins {
+    id 'org.springframework.boot' version '2.6.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+//apply plugin: 'java'
+//apply plugin: 'eclipse'
+//apply plugin: 'idea'
+//apply plugin: 'io.spring.dependency-management'
+//apply plugin: 'war'
+
+springBoot {
+    mainClass = "com.booking.management.Application"
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.6.4'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.6.4'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.6.4'
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0'
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+    implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.36.0.3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.6.4'
+}
